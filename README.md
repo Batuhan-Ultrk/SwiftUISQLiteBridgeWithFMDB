@@ -30,11 +30,11 @@ FMDB'yi kullanmak için Swift Package Manager (SPM) veya CocoaPods kullanabilirs
 
 #### CocoaPods
 1. Projenizin `Podfile` dosyasına aşağıdaki satırı ekleyin:
-  ```
-  pod 'FMDB'
-  ```
+     ```
+     pod 'FMDB'
+     ```
 
 2. Terminalde aşağıdaki komutla kurun:
-  ```
-  pod install
-  ```
+     ```
+     pod install
+     ```
