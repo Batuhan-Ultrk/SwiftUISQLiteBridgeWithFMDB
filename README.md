@@ -38,3 +38,28 @@ FMDB'yi kullanmak için Swift Package Manager (SPM) veya CocoaPods kullanabilirs
      ```
      pod install
      ```
+
+#### Manuel Kurulum
+
+Eğer Swift Package Manager veya CocoaPods kullanmak istemiyorsanız, FMDB kütüphanesini manuel olarak projenize ekleyebilirsiniz.
+
+#### Adımlar:
+
+1. **FMDB Dosyalarını İndirin**  
+   FMDB'nin kaynak kodlarını [FMDB GitHub Repository](https://github.com/ccgus/fmdb)'sinden indirin veya bu projede yer alan `FMDB` klasörünü kullanabilirsiniz.
+
+2. **FMDB Dosyalarını Projenize Ekleyin**  
+   `FMDatabase.h`, `FMDatabase.m`, ve FMDB'ye ait diğer dosyaları projenizin klasörüne taşıyın.  
+   - Xcode'da `File > Add Files to "ProjeAdı"` menüsünden dosyaları projeye ekleyin.
+
+3. **Objective-C Bridging Header Oluşturma**  
+   Eğer projeniz yalnızca Swift içeriyorsa, bir `Bridging Header` dosyası oluşturmanız gerekir. Bunu şu şekilde yapabilirsiniz:
+   
+   - Xcode'da `File > New > File > Header File` yolunu izleyin ve dosyanızı **ProjeAdı-Bridging-Header.h** olarak adlandırın.
+   - Daha sonra proje ayarlarına gidin:
+     - `Build Settings > Swift Compiler - General > Objective-C Bridging Header` kısmına **ProjeAdı-Bridging-Header.h** dosyasının yolunu ekleyin (örneğin: `ProjeAdı/ProjeAdı-Bridging-Header.h`).
+
+4. **FMDB'yi Bridging Header'a Ekleyin**  
+   `ProjeAdı-Bridging-Header.h` dosyasına şu satırı ekleyin:
+   ```objective-c
+   #import "FMDB.h"
